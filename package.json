@@ -1,0 +1,25 @@
+{
+  "name": "mdotd-ui",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "turbo run build",
+    "clear": "rimraf 'apps/*/{dist,node_modules}' && rimraf node_modules",
+    "changeset": "changeset",
+    "version-packages": "changeset version"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "storybook": "^8.5.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.11",
+    "turbo": "^2.3.3",
+    "vite": "^6.0.5"
+  }
+}
