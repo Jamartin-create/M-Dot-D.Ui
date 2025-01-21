@@ -1,7 +1,7 @@
 import Button from './Button.vue';
 
 export default {
-    title: 'Button',
+    title: 'Components/Button',
     component: Button,
     tags: ['autodocs'],
     argTypes: {
@@ -42,7 +42,7 @@ export const Small = {
 
 export const MArTin = {
     args: {
-        type: "secondary",
-        label: "Button"
-    }
+        type: 'secondary',
+        label: 'Button',
+    },
 };
