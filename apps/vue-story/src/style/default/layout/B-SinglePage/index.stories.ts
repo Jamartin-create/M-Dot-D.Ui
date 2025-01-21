@@ -1,7 +1,7 @@
 import SinglePageToB from '.';
 
 export default {
-    title: 'Layout/SinglePage/ToB',
+    title: 'Layout/B/SinglePage',
     component: SinglePageToB,
     tags: ['autodocs'],
     argTypes: {
