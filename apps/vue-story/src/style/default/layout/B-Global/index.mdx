@@ -1,4 +1,5 @@
-import { Meta, Canvas, Controls, Primary } from '@storybook/blocks';
+import { Meta, Canvas, Controls, Primary, Source, Story } from '@storybook/blocks';
+
 
 import * as Global from './index.stories';
 
@@ -11,3 +12,19 @@ import * as Global from './index.stories';
 ### 测试
 
 <Canvas of={Global.HasPadding} />
+
+
+### 带侧边栏
+
+<Canvas of={Global.SideBarDemo} sourceState='none' />
+
+<Source 
+    type='vue'
+    code={`
+<Global :padding="20">
+    <SideBar />
+</Global>
+    `}
+/>
+
+<Controls of={Global.SideBarDemo} />
