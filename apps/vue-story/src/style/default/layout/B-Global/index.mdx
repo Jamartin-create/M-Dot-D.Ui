@@ -1,30 +1,78 @@
 import { Meta, Canvas, Controls, Primary, Source, Story } from '@storybook/blocks';
-
-
 import * as Global from './index.stories';
 
 <Meta of={Global} />
+
+# Global 布局组件
+
+Global 布局组件是一个基于 CSS Grid 的完整页面布局系统，提供了灵活的页面结构组织方式。
+
+## 特性
+
+- 基于 CSS Grid 的响应式布局
+- 支持头部、侧边栏、内容区、底部的灵活组合
+- 提供默认样式，可以通过插槽自定义内容
+
+## 基础用法
 
 <Primary />
 
 <Controls />
 
-### 测试
+## 布局变体
 
-<Canvas of={Global.HasPadding} />
+### 无顶部导航布局
 
+适用于不需要顶部导航栏的页面布局。
 
-### 带侧边栏
+<Canvas of={Global.WithoutHeader} />
 
-<Canvas of={Global.SideBarDemo} sourceState='none' />
+### 无底部区域布局
 
-<Source 
-    type='vue'
-    code={`
-<Global :padding="20">
-    <SideBar />
-</Global>
-    `}
+适用于不需要底部信息的页面布局。
+
+<Canvas of={Global.WithoutFooter} />
+
+### 仅内容区域
+
+最简单的布局方式，只显示内容区域。
+
+<Canvas of={Global.OnlyContent} />
+
+## 组件尺寸控制
+
+每个布局区域都支持尺寸控制：
+
+- Header: 通过 `height` 属性控制高度
+- Sidebar: 通过 `width` 属性控制宽度
+- Content: 通过 `minHeight` 属性控制最小高度
+- Footer: 通过 `height` 属性控制高度
+
+### 默认尺寸
+
+- 头部高度：60px
+- 侧边栏宽度：240px
+- 内容区最小高度：500px
+- 底部高度：60px
+
+## 代码示例
+
+<Source
+  language="tsx"
+  dark
+  code={`
+<Layout>
+  <Header height={60}>顶部导航区域</Header>
+  <Sidebar width={240}>侧边栏内容</Sidebar>
+  <Content minHeight={500}>主要内容区域</Content>
+  <Footer height={60}>底部版权信息</Footer>
+</Layout>
+  `}
 />
 
-<Controls of={Global.SideBarDemo} />
+## 注意事项
+
+- 布局组件使用 CSS Grid 实现，确保浏览器兼容性
+- 所有区域都支持自定义内容
+- 布局区域可以根据需要选择性使用
+
