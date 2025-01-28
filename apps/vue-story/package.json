@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "storybook:dev": "rm -rf ./node_modules/.cache && storybook dev -p 6006"
+    "storybook:dev": "rm -rf ./node_modules/.cache && storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "vue": "^3.5.13"
